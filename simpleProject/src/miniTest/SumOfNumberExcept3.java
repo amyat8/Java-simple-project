@@ -5,7 +5,7 @@ public class SumOfNumberExcept3 {
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Plese Enter integer: ");
+		System.out.print("Please Enter integer: ");
 		int num = sc.nextInt();
 		
 		int sum=0;
@@ -15,7 +15,7 @@ public class SumOfNumberExcept3 {
 			}
 				sum+=i;
 		}
-		System.out.println("sum of num1 to num"+num+" except power 3 = "+sum);
+		System.out.println("sum of num1 to num"+num+" multiple of 3 = "+sum);
 		sc.close();
 	}
 

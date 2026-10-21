@@ -47,6 +47,10 @@ public class DWL_program {
 			status = input.next().charAt(0);
 			
 		}while(status != 'n');
+		
+		input.close();
 	}
+	
+	
 
 }

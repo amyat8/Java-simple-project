@@ -18,6 +18,7 @@ public class SumOfNumberExcept3 {
 		System.out.println("sum of num1 to num"+num+" multiple of 3 = "+sum);
 		sc.close();
 	}
+	
 
 
 }

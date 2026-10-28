@@ -21,6 +21,15 @@ public class Main {
 		double celsius = UnitConverter.toCelsius(77.0);
 		System.out.println("celsius 25.0 to fahrenheit: "+fahrenheit+"Degree");
 		System.out.println("fahrenheit 77.0 to celsius: "+celsius+"Degree");
+		System.out.println();
+		
+		System.out.println("===[problem3] AppConfig (static final constant) ===");
+		System.out.println("App name: "+AppConfig.APP_NAME);
+		System.out.println("Max users: "+AppConfig.MAX_USERS);
+		System.out.println("Version: "+AppConfig.VERSION);
+		
+		
+		
 	}
 
 }

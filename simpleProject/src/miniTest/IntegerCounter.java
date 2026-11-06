@@ -14,7 +14,7 @@ public class IntegerCounter {
 		arrSize = input.nextInt();
 		
 		System.out.print("please enter number: ");
-		for(int i =0; i<arrSize; i++) {
+		for(int i =0; i<arrSize; i++) { 
 			arr[i] = input.nextInt();
 			if (arr[i]>0) {
 				PositiveNum+= 1;

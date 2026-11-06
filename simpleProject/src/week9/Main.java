@@ -27,6 +27,17 @@ public class Main {
 		System.out.println("App name: "+AppConfig.APP_NAME);
 		System.out.println("Max users: "+AppConfig.MAX_USERS);
 		System.out.println("Version: "+AppConfig.VERSION);
+		System.out.println();
+		
+		System.out.println("===[problem4] ArrayCalculator (catch and finally) ===");
+		int[] arr = {10,20,0,40};
+		ArrayCalculator calc = new ArrayCalculator(arr);
+		System.out.println("Normal Dividing test ");
+		calc.divideElements(1, 0);
+		System.out.println("\n[ArithmeticException test]");
+		calc.divideElements(1, 2);
+		System.out.println("\n[ArrayIndexOutofBoundsException test]");
+		calc.divideElements(1, 5);
 		
 		
 		

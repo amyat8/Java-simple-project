@@ -10,7 +10,9 @@ public class ManagingUser {
 		int userCount =0;
 		
 		do {
+			
 		System.out.println("1.Create user\n2.Read user\n3.Update user\n4.Delete user\n5.Exit");
+		
 		System.out.print("Enter your option: ");
 		inputNum = input.nextInt();
 		input.nextLine();
@@ -25,7 +27,7 @@ public class ManagingUser {
 		else {
 			switch(inputNum) {
 			case 1:
-				System.out.println("Create user\n *********");
+				System.out.println("\n***********\nCreate user\n***********");
 				
 				System.out.print("Please enter user name: ");
 				user[userCount][1] = input.nextLine();
@@ -37,12 +39,22 @@ public class ManagingUser {
 				user[userCount][0] =String.valueOf(userId);
 				
 				userCount++;
+				System.out.println("");
 				break;
 				
 			case 2:
-				System.out.println("Read user\n*********");
-
+				System.out.println("\n***********\nRead user\n***********");
+				if(userCount==0) {
+					System.out.println("no user found"); 
+				}
+				else {
+					for(int i=0; i<userCount; i++) {
+						System.out.println("["+user[i][0]+", "+ user[i][1] +", "+ user[i][2]+"]");
+						}	
+				}
+				System.out.println("");
 				break;
+				
 			case 3:
 				System.out.println("Update user\n*********");
 				break;
@@ -50,6 +62,7 @@ public class ManagingUser {
 				System.out.println("Delete user\n*********");
 				break;
 			}
+			
 		}	
 		
 		}

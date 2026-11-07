@@ -41,6 +41,7 @@ public class ManagingUser {
 				
 			case 2:
 				System.out.println("Read user\n*********");
+
 				break;
 			case 3:
 				System.out.println("Update user\n*********");

@@ -5,9 +5,9 @@ public class ManagingUser {
 		Scanner input = new Scanner(System.in);
 		int inputNum;
 		String user[][] = new String[50][3];
-		int userId;
-		String userName, address;
+		int userId = 1001;
 		int userCount =0;
+		int updateId, deleteId;
 		
 		do {
 			
@@ -29,14 +29,20 @@ public class ManagingUser {
 			case 1:
 				System.out.println("\n***********\nCreate user\n***********");
 				
+				if (userCount >= user.length) {
+					System.out.println("user list is full");
+					System.out.println("");
+					break;
+				}
+				
 				System.out.print("Please enter user name: ");
 				user[userCount][1] = input.nextLine();
 				
 				System.out.print("Please enter address: ");
 				user[userCount][2] = input.nextLine();
 				
-				userId = 1001+userCount;
 				user[userCount][0] =String.valueOf(userId);
+				userId++;
 				
 				userCount++;
 				System.out.println("");
@@ -56,10 +62,64 @@ public class ManagingUser {
 				break;
 				
 			case 3:
-				System.out.println("Update user\n*********");
+				System.out.println("\n***********\nUpdate user\n***********");
+				System.out.print("enter ID to update:");
+				updateId = input.nextInt();
+				input.nextLine();
+				int foundUpdateindex = -1;
+				
+				for(int i=0; i<userCount; i++) {
+					if(user[i][0].equals(String.valueOf(updateId))) {
+						foundUpdateindex = i;
+						break;
+					}
+				}
+				
+				if(foundUpdateindex!=-1) {
+					System.out.print("Please enter user name to update: ");
+					user[foundUpdateindex][1] = input.nextLine();
+					
+					System.out.print("Please enter address to update: ");
+					user[foundUpdateindex][2] = input.nextLine();
+					
+					System.out.println("user Updated");
+					
+				}
+				else {
+					System.out.println("no user found with this Id, try again.");
+				}					
+				
+				System.out.println("");
 				break;
+				
 			case 4:
-				System.out.println("Delete user\n*********");
+				System.out.println("\n***********\nDelete user\n***********");
+				
+				System.out.print("enter ID to delete:");
+				deleteId = input.nextInt();
+				input.nextLine();
+				int foundDelindex = -1;
+				
+				for(int i=0; i<userCount; i++) {
+					if(user[i][0].equals(String.valueOf(deleteId))) {
+						foundDelindex = i;
+						break;
+					}
+				}
+				
+				if(foundDelindex!=-1) {
+					for(int i=foundDelindex; i<userCount-1; i++) {
+						user[i] = user[i+1];
+					}
+					userCount--;
+					user[userCount] = new String[3];   
+					System.out.println("user Deleted");
+				}
+				else {
+					System.out.println("no user found with this Id, try again.");
+				}
+				
+				System.out.println("");
 				break;
 			}
 			
